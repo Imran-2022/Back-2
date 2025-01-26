@@ -41,8 +41,8 @@ const getUserProfile = async (req, res) => {
 };
 
 // Define routes for handling profile-related requests
-router.route('/profile')
+router.route('/')
     .post(authorize, newUser);  // POST to create a new profile (requires authorization)
-router.get('/profile/:id', getUserProfile);  // GET to fetch a profile by userId (requires authorization)
+router.get('/:id', getUserProfile);  // GET to fetch a profile by userId (requires authorization)
 
 module.exports = router;  // Export the router to be used in other parts of the application

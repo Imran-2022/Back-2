@@ -39,6 +39,6 @@ app.get('/', (req, res) => {
 
 
 // Use the routers
-app.use('/user', userRouter);
+app.use('/profile', userRouter);
 
 module.exports = app;
