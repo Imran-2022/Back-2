@@ -14,7 +14,7 @@ const profileSchema = new mongoose.Schema({
         maxlength: 200,
     },
     interests: {
-        type: String,
+        type: [String],  
         required: true,
         minlength: 1,
         maxlength: 200,
@@ -25,7 +25,7 @@ const validateProfile = (profile) => {
     const schema = Joi.object({
         userId: Joi.string().required(),
         bio: Joi.string().min(1).max(200).required(),
-        interests: Joi.string().min(1).max(200).required(),
+        interests: Joi.array().items(Joi.string().min(1).max(200)).required(), 
     });
 
     return schema.validate(profile);
